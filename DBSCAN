@@ -4,7 +4,21 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 centers = [[0.5, 2], [-1, -1], [1.5, -1]]
 X, y = make_blobs(n_samples=400, centers=centers, cluster_std=0.5, random_state=0)
-#Determine centroids
+
 centers = [[0.5, 2], [-1, -1], [1.5, -1]]
 print(X)
 print(y)
+X = StandardScaler().fit_transform(X)
+
+
+plt.figure(figsize=(10,6))
+plt.scatter(X[:,0], X[:,1], c=y, cmap='Paired'
+
+from sklearn.cluster import DBSCAN
+db = DBSCAN(eps=0.4, min_samples=20)
+db.fit(X)
+y_pred = db.fit_predict(X)
+
+plt.figure(figsize=(10,6))
+plt.scatter(X[:,0], X[:,1],c=y_pred, cmap='Paired')
+plt.title("Clusters determined by DBSCAN")
