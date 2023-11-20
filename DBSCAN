@@ -6,11 +6,8 @@ centers = [[0.5, 2], [-1, -1], [1.5, -1]]
 X, y = make_blobs(n_samples=400, centers=centers, cluster_std=0.5, random_state=0)
 
 centers = [[0.5, 2], [-1, -1], [1.5, -1]]
-print(X)
-print(y)
+
 X = StandardScaler().fit_transform(X)
-
-
 plt.figure(figsize=(10,6))
 plt.scatter(X[:,0], X[:,1], c=y, cmap='Paired'
 
